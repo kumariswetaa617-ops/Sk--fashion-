@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="SK FASHION - premium everyday streetwear.">
+<title>SK.FASHION | Everyday Streetwear</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+html{scroll-behavior:smooth}body{font-family:Inter,sans-serif;background:#f5f3ee;color:#0a0a0a}
+.font-display{font-family:"Space Grotesk",sans-serif}.orange{color:#d85c32}.bg-orange{background:#d85c32}
+.mobile-menu{max-height:0;overflow:hidden;transition:max-height .3s}.mobile-menu.open{max-height:500px}
+.drawer{transform:translateX(100%);transition:transform .3s}.drawer.open{transform:translateX(0)}
+.overlay{opacity:0;pointer-events:none;transition:opacity .3s}.overlay.open{opacity:1;pointer-events:auto}
+.toast{transform:translate(-50%,120px);opacity:0;transition:.3s}.toast.show{transform:translate(-50%,0);opacity:1}
+.faq-content{max-height:0;overflow:hidden;transition:max-height .3s}.faq.open .faq-content{max-height:300px}.faq.open .faq-icon{transform:rotate(45deg)}
+.faq-icon{transition:.3s}.swatch.active{outline:2px solid #0a0a0a;outline-offset:3px}.size.active{background:#0a0a0a;color:#fff;border-color:#0a0a0a}
+</style>
+
+<style id="sk-premium-overrides">
+:root{
+  --ink:#090909;--paper:#f7f5f0;--cream:#ebe7de;--accent:#b88746;
+  --line:rgba(9,9,9,.12);--shadow:0 24px 70px rgba(0,0,0,.12);
+}
+body{background:var(--paper);color:var(--ink);overflow-x:hidden}
+::selection{background:#090909;color:#fff}
+a,button{transition:all .25s ease}
+button{cursor:pointer}
+img{display:block}
+img:not([src]),img[src=""]{visibility:hidden}
+.hero-image,.product-media,.story-media{box-shadow:var(--shadow)}
+.glass-nav{box-shadow:0 8px 30px rgba(0,0,0,.04)}
+.sk-card{border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.07)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:767px){
+  .mobile-menu{background:var(--paper)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-[#0a0a0a] text-white text-center text-[10px] sm:text-xs font-bold tracking-[.18em] uppercase py-3 px-4">
+Free shipping on orders above ₹2,999 • First drop 2026
+</div>
+
+<header class="sticky top-0 z-50 bg-[#f5f3ee]/95 backdrop-blur border-b border-black/10">
+<div class="max-w-7xl mx-auto px-5 lg:px-8">
+<div class="h-20 flex items-center justify-between">
+<a href="#home" class="font-display font-black text-xl sm:text-2xl tracking-[-.07em]">SK<span class="orange">.</span>BRAND</a>
+<nav class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-[.14em]">
+<a href="#home">Home</a><a href="#shop">Shop</a><a href="#story">Story</a><a href="#details">Details</a><a href="#faq">FAQ</a>
+</nav>
+<div class="flex items-center gap-3">
+<button onclick="openCart()" class="font-bold text-xs uppercase tracking-wider">Cart <span id="cartCount" class="inline-flex min-w-5 h-5 px-1 rounded-full bg-black text-white items-center justify-center text-[10px]">0</span></button>
+<button onclick="toggleMenu()" class="md:hidden w-9 h-9 flex flex-col justify-center items-center gap-1.5" aria-label="Menu"><i class="w-5 h-[2px] bg-black"></i><i class="w-5 h-[2px] bg-black"></i><i class="w-5 h-[2px] bg-black"></i></button>
+</div>
+</div>
+<div id="mobileMenu" class="mobile-menu md:hidden">
+<nav class="py-4 border-t border-black/10 flex flex-col text-sm font-bold uppercase">
+<a onclick="closeMenu()" href="#home" class="py-3">Home</a><a onclick="closeMenu()" href="#shop" class="py-3">Shop</a><a onclick="closeMenu()" href="#story" class="py-3">Story</a><a onclick="closeMenu()" href="#details" class="py-3">Details</a><a onclick="closeMenu()" href="#faq" class="py-3">FAQ</a>
+</nav>
+</div>
+</div>
+</header>
+
+<main id="main-content">
+<section id="home" class="overflow-hidden" reveal>
+<div class="max-w-7xl mx-auto px-5 lg:px-8">
+<div class="min-h-[calc(100vh-112px)] grid lg:grid-cols-2 items-center gap-10 py-16">
+<div>
+<p class="orange font-bold text-xs tracking-[.3em] uppercase mb-6">First Drop / 2026</p>
+<h1 class="font-display font-black text-[clamp(3.5rem,9vw,8rem)] leading-[.83] tracking-[-.075em] uppercase">Built<br>For<br>Every<br>Day.</h1>
+<p class="mt-8 text-base sm:text-lg text-black/60 max-w-lg leading-relaxed">Modern streetwear designed with comfort, character and everyday confidence. Comfortable silhouettes, considered details and pieces made to live in.</p>
+<div class="mt-9 flex flex-wrap gap-3">
+<a href="#shop" class="bg-black text-white px-7 py-4 font-bold text-xs uppercase tracking-[.15em] hover:bg-[#d85c32] transition">Shop The Drop</a>
+<a href="#story" class="border border-black/20 px-7 py-4 font-bold text-xs uppercase tracking-[.15em] hover:bg-white transition">Discover Us</a>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -right-10 w-48 h-48 border border-black/10 rounded-full"></div>
+<div class="relative overflow-hidden bg-[#d8d5ce] aspect-[4/5]">
+<img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1800&q=90" alt="Black hoodie" class="w-full h-full object-cover">
+<div class="absolute top-5 left-5 bg-white px-4 py-2 text-[10px] font-black tracking-[.18em] uppercase">New Drop</div>
+<div class="absolute bottom-5 left-5 right-5 flex justify-between items-end text-white">
+<div><p class="text-xs uppercase tracking-widest">Essential Hoodie</p><p class="font-display text-2xl font-bold">₹2,499</p></div>
+<a href="#shop" class="bg-white text-black w-12 h-12 flex items-center justify-center rounded-full text-xl">→</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="bg-black text-white py-5 overflow-hidden" reveal>
+<div class="whitespace-nowrap font-display font-bold text-2xl sm:text-4xl uppercase">WEAR IT. LIVE IN IT. MAKE IT YOURS. • WEAR IT. LIVE IN IT. MAKE IT YOURS. • WEAR IT. LIVE IN IT. MAKE IT YOURS.</div>
+</section>
+
+<section id="shop" class="py-24 bg-white" reveal>
+<div class="max-w-7xl mx-auto px-5 lg:px-8">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-5 mb-14">
+<div><p class="orange font-bold text-xs tracking-[.25em] uppercase mb-4">The Collection</p><h2 class="font-display text-5xl sm:text-6xl font-black tracking-[-.06em] uppercase">The Essentials</h2></div>
+<p class="text-sm text-black/50 max-w-sm">A small collection designed to become the pieces you reach for without thinking twice.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<article class="group">
+<div class="relative bg-[#d8d5ce] aspect-[4/5] overflow-hidden">
+<img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1572495532056-8583af1cbf11?auto=format&fit=crop&w=1400&q=90" alt="Signature black hoodie" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+<span class="absolute top-4 left-4 bg-black text-white px-3 py-2 text-[9px] font-black uppercase tracking-widest">Best Seller</span>
+<button onclick="quickAdd('Signature Hoodie',2499,'Black')" class="absolute bottom-4 left-4 right-4 bg-white py-4 font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">Quick Add</button>
+</div>
+<div class="pt-5 flex justify-between"><div><h3 class="font-bold uppercase text-sm">Signature Hoodie</h3><p class="text-xs text-black/50 mt-1">Heavyweight / Black</p></div><strong>₹2,499</strong></div>
+</article>
+<article class="group">
+<div class="relative bg-[#b8b4aa] aspect-[4/5] overflow-hidden">
+<img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=1400&q=90" alt="Stone hoodie" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+<span class="absolute top-4 left-4 bg-white px-3 py-2 text-[9px] font-black uppercase tracking-widest">New</span>
+<button onclick="quickAdd('Stone Hoodie',2499,'Stone')" class="absolute bottom-4 left-4 right-4 bg-white py-4 font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">Quick Add</button>
+</div>
+<div class="pt-5 flex justify-between"><div><h3 class="font-bold uppercase text-sm">Stone Hoodie</h3><p class="text-xs text-black/50 mt-1">Heavyweight / Stone</p></div><strong>₹2,499</strong></div>
+</article>
+<article class="group">
+<div class="relative bg-[#242424] aspect-[4/5] overflow-hidden">
+<img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=1400&q=90" alt="Midnight hoodie" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+<span class="absolute top-4 left-4 bg-[#d85c32] text-white px-3 py-2 text-[9px] font-black uppercase tracking-widest">Limited</span>
+<button onclick="quickAdd('Midnight Hoodie',2699,'Midnight')" class="absolute bottom-4 left-4 right-4 bg-white py-4 font-bold text-xs uppercase tracking-widest opacity-0 group-hover:opacity-100 transition">Quick Add</button>
+</div>
+<div class="pt-5 flex justify-between"><div><h3 class="font-bold uppercase text-sm">Midnight Hoodie</h3><p class="text-xs text-black/50 mt-1">Oversized / Midnight</p></div><strong>₹2,699</strong></div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="details" class="py-24 bg-[#f5f3ee]" reveal>
+<div class="max-w-7xl mx-auto px-5 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+<div class="bg-[#d8d5ce] aspect-square overflow-hidden"><img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1800&q=90" alt="Signature hoodie" class="w-full h-full object-cover"></div>
+<div>
+<p class="orange font-bold text-xs tracking-[.25em] uppercase mb-4">Your everyday layer</p>
+<h2 class="font-display text-5xl sm:text-6xl font-black tracking-[-.06em] uppercase leading-[.9]">Signature<br>Hoodie</h2>
+<div class="flex items-center gap-4 mt-6"><span class="text-2xl font-bold">₹2,499</span><span class="text-sm line-through text-black/30">₹2,999</span><span class="bg-[#d85c32] text-white px-2 py-1 text-[9px] font-black">SAVE 17%</span></div>
+<p class="mt-7 text-black/60 leading-relaxed">A clean everyday hoodie built around comfort, structure and easy styling. Designed for daily wear, layering and everything that happens between.</p>
+
+<div class="mt-8">
+<div class="flex justify-between mb-3"><span class="text-xs font-black uppercase tracking-widest">Color</span><span id="selectedColor" class="text-xs text-black/50">Black</span></div>
+<div class="flex gap-4">
+<button onclick="selectColor(this,'Black')" class="swatch active w-8 h-8 rounded-full bg-black" aria-label="Black"></button>
+<button onclick="selectColor(this,'Stone')" class="swatch w-8 h-8 rounded-full bg-[#b9b3a7]" aria-label="Stone"></button>
+<button onclick="selectColor(this,'Forest')" class="swatch w-8 h-8 rounded-full bg-[#26372e]" aria-label="Forest"></button>
+</div>
+</div>
+
+<div class="mt-8">
+<div class="flex justify-between items-center mb-3"><span class="text-xs font-black uppercase tracking-widest">Size</span><button onclick="openSizeGuide()" class="text-xs underline font-semibold">Size Guide</button></div>
+<div class="grid grid-cols-4 gap-2">
+<button onclick="selectSize(this,'S')" class="size border border-black/15 py-3 font-bold text-xs">S</button>
+<button onclick="selectSize(this,'M')" class="size active border border-black/15 py-3 font-bold text-xs">M</button>
+<button onclick="selectSize(this,'L')" class="size border border-black/15 py-3 font-bold text-xs">L</button>
+<button onclick="selectSize(this,'XL')" class="size border border-black/15 py-3 font-bold text-xs">XL</button>
+</div>
+</div>
+
+<div class="mt-8 flex gap-3">
+<div class="border border-black/20 flex items-center"><button onclick="changeQty(-1)" class="w-12 h-14">−</button><span id="qty" class="w-8 text-center font-bold">1</span><button onclick="changeQty(1)" class="w-12 h-14">+</button></div>
+<button onclick="addMainProduct()" class="flex-1 bg-black text-white font-black uppercase tracking-[.15em] text-xs hover:bg-[#d85c32] transition">Add To Cart</button>
+</div>
+<div class="grid grid-cols-3 gap-3 mt-8 pt-8 border-t border-black/10 text-[10px] uppercase"><div><b class="block text-xs">Easy</b><span class="text-black/50">Returns</span></div><div><b class="block text-xs">Secure</b><span class="text-black/50">Checkout</span></div><div><b class="block text-xs">Careful</b><span class="text-black/50">Packing</span></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="bg-black text-white py-24" reveal>
+<div class="max-w-7xl mx-auto px-5 lg:px-8 grid md:grid-cols-3 gap-12">
+<div><span class="orange font-display text-5xl font-bold">01</span><h3 class="mt-6 font-display text-2xl font-bold uppercase">Comfort First</h3><p class="mt-4 text-white/50 text-sm leading-relaxed">A soft interior and relaxed silhouette designed for everyday movement.</p></div>
+<div><span class="orange font-display text-5xl font-bold">02</span><h3 class="mt-6 font-display text-2xl font-bold uppercase">Built To Last</h3><p class="mt-4 text-white/50 text-sm leading-relaxed">Thoughtful construction and reinforced details designed for repeat wear.</p></div>
+<div><span class="orange font-display text-5xl font-bold">03</span><h3 class="mt-6 font-display text-2xl font-bold uppercase">No Noise</h3><p class="mt-4 text-white/50 text-sm leading-relaxed">Clean branding, versatile colors and a silhouette that works without trying too hard.</p></div>
+</div>
+</section>
+
+<section id="story" class="py-24 lg:py-32 bg-white" reveal>
+<div class="max-w-7xl mx-auto px-5 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+<div><p class="orange font-bold text-xs tracking-[.25em] uppercase mb-5">Why We Exist</p><h2 class="font-display text-5xl sm:text-7xl font-black uppercase tracking-[-.07em] leading-[.88]">Clothes<br>Should<br>Feel Like<br>You.</h2></div>
+<div><p class="text-xl sm:text-2xl leading-relaxed font-medium">We believe everyday clothing doesn't have to be boring.</p><p class="mt-7 text-black/55 leading-relaxed">SK FASHION started with a simple idea: create pieces that feel good, look intentional and survive real life.</p><p class="mt-5 text-black/55 leading-relaxed">No endless collections. No unnecessary noise. Just carefully considered everyday pieces that earn their place in your wardrobe.</p><a href="#shop" class="inline-flex mt-8 gap-3 font-black uppercase text-xs tracking-widest border-b-2 border-black pb-2">Explore the collection →</a></div>
+</div>
+</section>
+
+<section class="grid md:grid-cols-2" reveal>
+<div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1600&q=90" alt="Streetwear" class="w-full h-full object-cover hover:scale-105 transition duration-700"></div>
+<div class="aspect-[4/3] overflow-hidden"><img loading="lazy" decoding="async" onerror="this.closest('.image-frame')?.classList.add('image-failed');this.style.display='none'" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1600&q=90" alt="Everyday clothing" class="w-full h-full object-cover hover:scale-105 transition duration-700"></div>
+</section>
+
+<section class="py-24 bg-[#f5f3ee]" reveal>
+<div class="max-w-7xl mx-auto px-5 lg:px-8">
+<div class="text-center max-w-2xl mx-auto"><p class="orange font-bold text-xs tracking-[.25em] uppercase mb-4">The People</p><h2 class="font-display text-4xl sm:text-5xl font-black uppercase tracking-[-.06em]">Worn In The Real World</h2></div>
+<div class="grid md:grid-cols-3 gap-6 mt-14">
+<div class="bg-white p-8"><div class="orange">★★★★★</div><p class="mt-6 leading-relaxed text-black/70">"The fit is exactly what I wanted. Relaxed without looking sloppy."</p><p class="mt-8 font-bold text-xs uppercase tracking-widest">A. Sharma</p></div>
+<div class="bg-white p-8"><div class="orange">★★★★★</div><p class="mt-6 leading-relaxed text-black/70">"The fabric feels substantial and the shape works with basically everything."</p><p class="mt-8 font-bold text-xs uppercase tracking-widest">R. Mehta</p></div>
+<div class="bg-white p-8"><div class="orange">★★★★★</div><p class="mt-6 leading-relaxed text-black/70">"Clean design, comfortable fit and no giant logo screaming for attention."</p><p class="mt-8 font-bold text-xs uppercase tracking-widest">N. Singh</p></div>
+</div>
+</div>
+</section>
+
+<section id="faq" class="py-24 lg:py-32" reveal>
+<div class="max-w-4xl mx-auto px-5 lg:px-8">
+<div class="text-center mb-12"><p class="orange font-bold text-xs tracking-[.25em] uppercase mb-4">Questions</p><h2 class="font-display text-5xl font-black uppercase">FAQ</h2></div>
+<div class="border-t border-black/15">
+<div class="faq border-b border-black/15"><button onclick="toggleFaq(this)" class="w-full flex justify-between py-6 text-left font-bold">How do I choose my size?<span class="faq-icon text-2xl">+</span></button><div class="faq-content"><p class="pb-6 text-sm text-black/55">Check our size guide before ordering. If you prefer a relaxed oversized look, consider sizing up.</p></div></div>
+<div class="faq border-b border-black/15"><button onclick="toggleFaq(this)" class="w-full flex justify-between py-6 text-left font-bold">How long does delivery take?<span class="faq-icon text-2xl">+</span></button><div class="faq-content"><p class="pb-6 text-sm text-black/55">Delivery time depends on your location. Add your actual delivery estimates before launch.</p></div></div>
+<div class="faq border-b border-black/15"><button onclick="toggleFaq(this)" class="w-full flex justify-between py-6 text-left font-bold">Can I return my hoodie?<span class="faq-icon text-2xl">+</span></button><div class="faq-content"><p class="pb-6 text-sm text-black/55">Returns should follow your published return policy. Add your exact eligibility period and conditions before launch.</p></div></div>
+<div class="faq border-b border-black/15"><button onclick="toggleFaq(this)" class="w-full flex justify-between py-6 text-left font-bold">Is checkout connected to real payments?<span class="faq-icon text-2xl">+</span></button><div class="faq-content"><p class="pb-6 text-sm text-black/55">The cart works in this demo. A real store needs a secure backend and payment gateway connection.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="bg-[#d85c32] text-white py-20" reveal>
+<div class="max-w-3xl mx-auto px-5 text-center">
+<p class="text-xs font-black uppercase tracking-[.25em]">Stay in the loop</p><h2 class="font-display text-4xl sm:text-6xl font-black uppercase tracking-[-.06em] mt-4">Don't Miss The Drop.</h2>
+<p class="mt-5 text-white/75">New releases, limited pieces and occasional good stuff.</p>
+<form onsubmit="subscribe(event)" class="mt-8 flex flex-col sm:flex-row gap-2 max-w-xl mx-auto"><input id="email" type="email" required placeholder="Your email address" class="flex-1 px-5 py-4 text-black outline-none"><button class="bg-black text-white px-7 py-4 font-black uppercase text-xs tracking-widest">Subscribe</button></form>
+</div>
+</section>
+</main>
+
+<footer class="bg-black text-white">
+<div class="max-w-7xl mx-auto px-5 lg:px-8 py-16">
+<div class="grid md:grid-cols-4 gap-12">
+<div class="md:col-span-2"><a href="#home" class="font-display font-black text-3xl tracking-[-.08em]">SK<span class="orange">.</span>BRAND</a><p class="mt-6 text-white/45 max-w-sm text-sm">Everyday clothing for people building their own story.</p></div>
+<div><h4 class="text-xs font-black uppercase tracking-widest mb-5">Shop</h4><div class="flex flex-col gap-3 text-sm text-white/50"><a href="#shop">Hoodies</a><a href="#shop">New Drops</a><button onclick="openSizeGuide()" class="text-left">Size Guide</button></div></div>
+<div><h4 class="text-xs font-black uppercase tracking-widest mb-5">Help</h4><div class="flex flex-col gap-3 text-sm text-white/50"><a href="#faq">FAQ</a><a href="#">Shipping</a><a href="#">Returns</a><a href="mailto:hello@example.com">Contact</a></div></div>
+</div>
+<div class="mt-14 pt-7 border-t border-white/10 flex flex-col sm:flex-row justify-between gap-4 text-[10px] uppercase tracking-widest text-white/30"><p>© 2026 SK FASHION. All rights reserved.</p><div class="flex gap-5"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">TikTok</a></div></div>
+</div>
+</footer>
+
+<div id="overlay" onclick="closeCart()" class="overlay fixed inset-0 bg-black/50 z-[90]"></div>
+<aside id="cart" class="drawer fixed right-0 top-0 bottom-0 w-full max-w-md bg-white z-[100] shadow-2xl flex flex-col">
+<div class="p-6 border-b flex justify-between items-center"><div><p class="text-[10px] uppercase tracking-widest text-black/40">Your bag</p><h2 class="font-display font-black text-2xl uppercase">Cart</h2></div><button onclick="closeCart()" class="w-10 h-10 rounded-full bg-[#f5f3ee] text-xl">×</button></div>
+<div id="cartItems" class="flex-1 overflow-y-auto p-6"></div>
+<div class="p-6 border-t"><div class="flex justify-between mb-4"><span class="text-xs uppercase tracking-widest font-bold">Subtotal</span><strong id="cartTotal">₹0</strong></div><button onclick="checkout()" class="w-full bg-black text-white py-4 font-black uppercase text-xs tracking-[.15em] hover:bg-[#d85c32]">Proceed To Checkout</button><p class="text-[10px] text-center text-black/40 mt-3">Taxes and shipping calculated at checkout.</p></div>
+</aside>
+
+<div id="sizeModal" class="hidden fixed inset-0 z-[110] bg-black/60 items-center justify-center p-5">
+<div class="bg-white w-full max-w-lg p-7 sm:p-10">
+<div class="flex justify-between mb-7"><h2 class="font-display font-black text-3xl uppercase">Size Guide</h2><button onclick="closeSizeGuide()" class="text-2xl">×</button></div>
+<div class="overflow-x-auto"><table class="w-full text-sm"><thead><tr class="border-b"><th class="text-left py-3">Size</th><th class="text-left py-3">Chest</th><th class="text-left py-3">Length</th></tr></thead><tbody>
+<tr class="border-b"><td class="py-3 font-bold">S</td><td>38–40"</td><td>26"</td></tr><tr class="border-b"><td class="py-3 font-bold">M</td><td>40–42"</td><td>27"</td></tr><tr class="border-b"><td class="py-3 font-bold">L</td><td>42–44"</td><td>28"</td></tr><tr><td class="py-3 font-bold">XL</td><td>44–46"</td><td>29"</td></tr>
+</tbody></table></div>
+<p class="text-xs text-black/45 mt-6">These measurements are placeholders. Replace them with your manufacturer's actual measurements before launch.</p>
+</div>
+</div>
+
+<div id="toast" class="toast fixed bottom-6 left-1/2 z-[200] bg-black text-white px-6 py-4 text-xs font-bold uppercase tracking-widest shadow-2xl">Added to cart</div>
+
+<script>
+let selectedColor="Black",selectedSize="M",quantity=1;
+let cart=JSON.parse(localStorage.getItem("skFashionCart")||"[]");
+
+function save(){localStorage.setItem("skFashionCart",JSON.stringify(cart))}
+function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("open")}
+function closeMenu(){document.getElementById("mobileMenu").classList.remove("open")}
+function openCart(){document.getElementById("cart").classList.add("open");document.getElementById("overlay").classList.add("open");document.body.style.overflow="hidden"}
+function closeCart(){document.getElementById("cart").classList.remove("open");document.getElementById("overlay").classList.remove("open");document.body.style.overflow=""}
+
+function add(item){
+ const x=cart.find(i=>i.name===item.name&&i.color===item.color&&i.size===item.size);
+ if(x)x.quantity+=item.quantity;else cart.push(item);
+ save();update();toast("Added to cart");
+}
+function quickAdd(name,price,color){add({name,price,color,size:"M",quantity:1})}
+function addMainProduct(){add({name:"Signature Hoodie",price:2499,color:selectedColor,size:selectedSize,quantity})}
+function removeItem(i){cart.splice(i,1);save();update()}
+function cartQty(i,n){cart[i].quantity+=n;if(cart[i].quantity<=0)cart.splice(i,1);save();update()}
+
+function update(){
+ let count=cart.reduce((a,i)=>a+i.quantity,0),total=cart.reduce((a,i)=>a+i.price*i.quantity,0);
+ document.getElementById("cartCount").textContent=count;
+ document.getElementById("cartTotal").textContent="₹"+total.toLocaleString("en-IN");
+ const box=document.getElementById("cartItems");
+ if(!cart.length){box.innerHTML='<div class="text-center py-20"><div class="text-5xl mb-5">🛍</div><p class="font-bold uppercase text-sm">Your cart is empty</p><p class="text-xs text-black/40 mt-2">Add something you love.</p></div>';return}
+ box.innerHTML=cart.map((i,n)=>`<div class="flex gap-4 py-5 border-b"><div class="w-20 h-24 bg-[#f5f3ee] flex items-center justify-center text-[9px] font-black uppercase"><span class="text-[9px] font-black uppercase">${i.color}</span></div><div class="flex-1"><div class="flex justify-between gap-2"><div><h3 class="font-bold text-sm uppercase">${i.name}</h3><p class="text-xs text-black/40 mt-1">${i.color} / ${i.size}</p></div><button onclick="removeItem(${n})" class="text-black/30">×</button></div><div class="flex justify-between items-center mt-5"><div class="flex items-center border"><button onclick="cartQty(${n},-1)" class="w-8 h-8">−</button><span class="w-8 text-center text-xs font-bold">${i.quantity}</span><button onclick="cartQty(${n},1)" class="w-8 h-8">+</button></div><strong class="text-sm">₹${(i.price*i.quantity).toLocaleString("en-IN")}</strong></div></div></div>`).join("");
+}
+function selectColor(b,c){selectedColor=c;document.querySelectorAll(".swatch").forEach(x=>x.classList.remove("active"));b.classList.add("active");document.getElementById("selectedColor").textContent=c}
+function selectSize(b,s){selectedSize=s;document.querySelectorAll(".size").forEach(x=>x.classList.remove("active"));b.classList.add("active")}
+function changeQty(n){quantity=Math.max(1,Math.min(10,quantity+n));document.getElementById("qty").textContent=quantity}
+function openSizeGuide(){let m=document.getElementById("sizeModal");m.classList.remove("hidden");m.classList.add("flex");document.body.style.overflow="hidden"}
+function closeSizeGuide(){let m=document.getElementById("sizeModal");m.classList.add("hidden");m.classList.remove("flex");document.body.style.overflow=""}
+function toggleFaq(b){let f=b.parentElement;document.querySelectorAll(".faq").forEach(x=>{if(x!==f)x.classList.remove("open")});f.classList.toggle("open")}
+function subscribe(e){e.preventDefault();document.getElementById("email").value="";toast("You're on the list")}
+function checkout(){if(!cart.length){toast("Your cart is empty");return}toast("Payment gateway needs to be connected")}
+let timer;function toast(msg){let t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>t.classList.remove("show"),2200)}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeCart();closeSizeGuide()}});
+update();
+</script>
+
+<script>
+(() => {
+  const safeStorage = {
+    get(key, fallback){
+      try { return JSON.parse(localStorage.getItem(key) || JSON.stringify(fallback)); }
+      catch(e){ console.warn("Storage read failed:", e); return fallback; }
+    },
+    set(key,value){
+      try { localStorage.setItem(key, JSON.stringify(value)); }
+      catch(e){ console.warn("Storage write failed:", e); }
+    }
+  };
+
+  window.cart = safeStorage.get("skFashionCart", []);
+  window.save = () => safeStorage.set("skFashionCart", window.cart);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("error", () => {
+      img.style.display = "none";
+      const parent = img.parentElement;
+      if(parent) parent.classList.add("image-failed");
+    }, {once:true});
+  });
+
+  window.addEventListener("storage", () => {
+    window.cart = safeStorage.get("skFashionCart", []);
+    if(typeof update === "function") update();
+  });
+})();
+</script>
+</body>
+</html>
